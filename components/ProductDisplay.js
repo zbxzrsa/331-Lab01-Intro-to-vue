@@ -29,16 +29,18 @@ const productDisplay = {
         </div>
        
     `,
-     props: {
+    props: {
          premium: Boolean
      },
-    setup(props, { emit }) {        //10.1
+    setup(props, { emit }) { 
+        const shipping = computed(()=>{
+            if (props.premium){
                 return 'Free'
             } else {
-                return : 30
+                return 30
             }
            
-        }
+        })
         const product = ref('Boots')
         const brand = ref('SE 331')
         // const image = ref('./assets/images/socks_green.jpg')
@@ -85,3 +87,5 @@ const productDisplay = {
             updateVariant,
             shipping
         }
+    }
+}
